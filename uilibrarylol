@@ -246,8 +246,10 @@ function Library:CreateWindow(hubname)
                UICorner.CornerRadius = UDim.new(0, 3)
                UICorner.Parent = TextBox
                
-               TextBox.TextChanged:Connect(function()
-                  callback(TextBox.Text)
+               TextBox.FocusLost:Connect(function(enterPressed)
+	             if enterPressed then
+		            callback(TextBox.Text)
+                   end
                end)
           end
          return ElementHandler
