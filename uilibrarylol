@@ -144,6 +144,21 @@ function Library:CreateWindow(hubname)
         Page.Size = UDim2.new(0, 406, 0, 415)
         Page.ScrollBarThickness = 5
         
+        
+        local UIPadding = Instance.new("UIPadding")
+        local Button = Instance.new("ImageButton")
+        local Label = Instance.new("TextLabel")
+        local UIListLayout = Instance.new("UIListLayout")
+
+
+        UIPadding.Parent = game.StarterGui.KeySystem.Main.pagefolder.Page
+        UIPadding.PaddingBottom = UDim.new(0, 5)
+        UIPadding.PaddingTop = UDim.new(0, 5)
+
+        UIListLayout.Parent = game.StarterGui.KeySystem.Main.pagefolder.Page
+        UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        
         for i,v in next, pagefolder:GetChildren() do
                 v.Visible = false
         end 
@@ -178,6 +193,39 @@ function Library:CreateWindow(hubname)
         end 
         Page.Visible = true
         end)   
+        
+        local ElementHandler = {}
+        
+        function ElementHandler:Button(name, callback)
+            local name = name or "TextButton"
+            local callback = callback or function() end
+            
+            Button.Name = "Button"
+            Button.Parent = Page
+            Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Button.BackgroundTransparency = 1.000
+            Button.Size = UDim2.new(0, 385, 0, 40)
+            Button.Image = "rbxassetid://2790382281"
+            Button.ImageColor3 = Color3.fromRGB(35, 35, 35)
+            Button.ScaleType = Enum.ScaleType.Slice
+            Button.SliceCenter = Rect.new(4, 4, 252, 252)
+
+            Label.Name = "Label"
+            Label.Parent = Button
+            Label.AnchorPoint = Vector2.new(0.5, 0.5)
+            Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Label.BackgroundTransparency = 1.000
+            Label.BorderSizePixel = 0
+            Label.Position = UDim2.new(0.5, 0, 0.5, 0)
+            Label.Size = UDim2.new(1, -5, 1, -5)
+            Label.Font = Enum.Font.GothamSemibold
+            Label.Text = "Button"
+            Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Label.TextSize = 14.000
+            
+            Button.MouseButton1Click:Connect(function()
+                  callback()
+            end)
      end
      return TabHandler
 end
