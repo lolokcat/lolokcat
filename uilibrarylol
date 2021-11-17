@@ -228,7 +228,7 @@ function Library:CreateWindow(hubname)
          end
          
          function ElementHandler:TextBox(name, callback)
-               local name = name or "TextButton"
+               local name = name or "TextBox"
                local callback = callback or function() end
                
                local TextBox = Instance.new("TextBox")
