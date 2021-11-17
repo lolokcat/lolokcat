@@ -220,7 +220,7 @@ function Library:CreateWindow(hubname)
             Label.Position = UDim2.new(0.5, 0, 0.5, 0)
             Label.Size = UDim2.new(1, -5, 1, -5)
             Label.Font = Enum.Font.GothamSemibold
-            Label.Text = "Button"
+            Label.Text = name
             Label.TextColor3 = Color3.fromRGB(255, 255, 255)
             Label.TextSize = 14.000
             
