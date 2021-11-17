@@ -368,7 +368,7 @@ function Library:CreateWindow(hubname)
 	 end
 	 
 	 function ElementHandler:Toggle(name, state, callback)
-	 	local name = name or "Dropdown"
+	 	local name = name or "Toggle"
 		local callback = callback or function() end
 		local state = state or false
 		local Toggle = Instance.new("ImageButton")
@@ -377,7 +377,7 @@ function Library:CreateWindow(hubname)
 		local crop_din = Instance.new("ImageButton")
 		
 		Toggle.Name = "Toggle"
-		Toggle.Parent = game.StarterGui.KeySystem.Main.pagefolder.Page
+		Toggle.Parent = Page
 		Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		Toggle.BackgroundTransparency = 1.000
 		Toggle.Position = UDim2.new(0.139802635, 0, 0.166844919, 0)
@@ -396,7 +396,7 @@ function Library:CreateWindow(hubname)
 		Label.Position = UDim2.new(0.5, 0, 0.5, 0)
 		Label.Size = UDim2.new(1, -5, 1, -5)
 		Label.Font = Enum.Font.GothamSemibold
-		Label.Text = "Button"
+		Label.Text = name
 		Label.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Label.TextSize = 14.000
 
@@ -428,7 +428,7 @@ function Library:CreateWindow(hubname)
 			game:GetService("TweenService"):Create(asset, info, thing):Play()
 		end
 		
-		local Dropped = false
+		local Dropped = state
 		
 		Toggle.MouseButton1Click:Connect(function()
 			if Dropped == true then
