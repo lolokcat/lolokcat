@@ -295,7 +295,7 @@ function Library:CreateWindow(hubname)
 		arrow_drop_down.Position = UDim2.new(0.903896153, 0, 0.075000003, 0)
 		arrow_drop_down.Size = UDim2.new(0, 34, 0, 34)
 		arrow_drop_down.ZIndex = 2
-		arrow_drop_down.Rotation = 90
+		arrow_drop_down.Rotation = -90
 		arrow_drop_down.Image = "rbxassetid://3926307971"
 		arrow_drop_down.ImageRectOffset = Vector2.new(324, 524)
 		arrow_drop_down.ImageRectSize = Vector2.new(36, 36)
@@ -360,7 +360,7 @@ function Library:CreateWindow(hubname)
 				Dropped = false
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
-				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = 90})
+				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = -90})
 				wait(0.3)
 				for i,v in pairs(OptionContainer:GetChildren()) do 
 					Tween(v, TweenInfo.new(0.3), {TextTransparency = 0})
@@ -369,7 +369,7 @@ function Library:CreateWindow(hubname)
 				Dropped = true
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
-				Tween(arrow_drop_down, TweenInfo.new(0, 3), {Rotation = arrow_drop_down.Rotation + 90})
+				Tween(arrow_drop_down, TweenInfo.new(0, 3), {Rotation = arrow_drop_down.Rotation + 180})
 				wait(0.3)
 				for i,v in pairs(OptionContainer:GetChildren()) do 
 					Tween(v, TweenInfo.new(0.3), {TextTransparency = 1})
