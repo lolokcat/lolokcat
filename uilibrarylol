@@ -143,7 +143,7 @@ function Library:CreateWindow(hubname)
         Page.Position = UDim2.new(0.128043875, 0, 0.521925151, 0)
         Page.Size = UDim2.new(0, 390, 0, 415)
         Page.CanvasPosition = Vector2.new(0, 75)
-        Page.ScrollBarThickness = 5
+        Page.ScrollBarThickness = 0
         
         TabButton.Name = name
         TabButton.Parent = SideBar
