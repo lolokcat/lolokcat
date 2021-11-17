@@ -234,7 +234,7 @@ function Library:CreateWindow(hubname)
                local TextBox = Instance.new("TextBox")
                local UICorner = Instance.new("UICorner")
 
-               TextBox.Parent = game.StarterGui.KeySystem.Main.pagefolder.Page
+               TextBox.Parent = Page
                TextBox.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
                TextBox.Position = UDim2.new(0, 0, 0.108433738, 0)
                TextBox.Size = UDim2.new(0, 385, 0, 40)
