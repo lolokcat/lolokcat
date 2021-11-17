@@ -343,11 +343,7 @@ function Library:CreateWindow(hubname)
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
 				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = 90})
-				wait(0.3)
-				for i,j in pairs(OptionContainer:GetChildren()) do 
-					Tween(j, TweenInfo.new(0.3), {TextTransparency = 0})
-				end
-				callback(v)
+				callback(Option.Text)
 			end)
 		end
 		
@@ -361,19 +357,11 @@ function Library:CreateWindow(hubname)
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
 				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = -90})
-				wait(0.3)
-				for i,v in pairs(OptionContainer:GetChildren()) do 
-					Tween(v, TweenInfo.new(0.3), {TextTransparency = 0})
-				end
 			elseif Dropped == false then
 				Dropped = true
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
 				Tween(arrow_drop_down, TweenInfo.new(0, 3), {Rotation = -90})
-				wait(0.3)
-				for i,v in pairs(OptionContainer:GetChildren()) do 
-					Tween(v, TweenInfo.new(0.3), {TextTransparency = 1})
-				end
 			end
 		end)
 	 end
