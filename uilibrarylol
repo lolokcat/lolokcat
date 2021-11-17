@@ -130,8 +130,8 @@ function Library:CreateWindow(hubname)
         local Page = Instance.new("ScrollingFrame")
         local TabButton = Instance.new("ImageButton")
         local Label = Instance.new("TextLabel")
-            
-        Page.Name = name
+
+        Page.Name = "Page"
         Page.Parent = pagefolder
         Page.Active = true
         Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
