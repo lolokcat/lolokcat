@@ -168,8 +168,8 @@ function Library:CreateWindow(hubname)
         TabButton.MouseButton1Click:Connect(function()
         for i,v in next, pagefolder:GetChildren() do
                 v.Visible = false
-            end 
-            Page.Visible = true
+        end 
+        Page.Visible = true
         end)   
      end
      return TabHandler
