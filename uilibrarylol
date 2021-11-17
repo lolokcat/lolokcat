@@ -1,6 +1,6 @@
 local Library = {}
 
-function Library.CreateWindow(hubname)
+function Library:CreateWindow(hubname)
       local KeySystem = Instance.new("ScreenGui")
       local Main = Instance.new("Frame")
       local MainCorner2 = Instance.new("UICorner")
