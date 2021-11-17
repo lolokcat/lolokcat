@@ -125,7 +125,7 @@ function Library:CreateWindow(hubname)
       Extention4.Size = UDim2.new(0, 7, 0, 9)
       
       pagefolder.Name = "pagefolder"
-      pagefolder.Parent = KeySystem
+      pagefolder.Parent = Main
       
       local TabHandler = {}
       
@@ -140,10 +140,14 @@ function Library:CreateWindow(hubname)
         Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         Page.BackgroundTransparency = 1.000
         Page.BorderSizePixel = 0
-        Page.Position = UDim2.new(0.128043875, 0, 0.521925151, 0)
-        Page.Size = UDim2.new(0, 390, 0, 415)
-        Page.CanvasPosition = Vector2.new(0, 75)
-        Page.ScrollBarThickness = 0
+        Page.Position = UDim2.new(0.268331647, 0, 1.06038666, 0)
+        Page.Size = UDim2.new(0, 406, 0, 415)
+        Page.ScrollBarThickness = 5
+        
+        for i,v in next, pagefolder:GetChildren() do
+                v.Visible = false
+        end 
+        Page.Visible = true
         
         TabButton.Name = name
         TabButton.Parent = SideBar
