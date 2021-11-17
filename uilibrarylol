@@ -324,6 +324,10 @@ function Library:CreateWindow(hubname)
 		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 		
+		local function Tween(asset, info, thing)
+			game:GetService("TweenService"):Create(asset, info, thing):Play()
+		end
+		
 		for i,v in pairs(options) do 
 			local Option = Instance.new("TextButton")
 			Option.Name = v
@@ -342,13 +346,9 @@ function Library:CreateWindow(hubname)
 			Option.MouseButton1Click:Connect(function()
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
-				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = 90})
-				callback(Option.Text)
+				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = -90})
+				callback(v)
 			end)
-		end
-		
-		local function Tween(asset, info, thing)
-			game:GetService("TweenService"):Create(asset, info, thing):Play()
 		end
 		
 		DropDown.MouseButton1Click:Connect(function()
