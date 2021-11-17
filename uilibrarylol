@@ -127,7 +127,11 @@ function Library:CreateWindow(hubname)
       local TabHandler = {}
       
       function TabHandler:Tab(name)
-        Page.Name = "Page"
+        local Page = Instance.new("ScrollingFrame")
+        local TabButton = Instance.new("ImageButton")
+        local Label = Instance.new("TextLabel")
+            
+        Page.Name = name
         Page.Parent = pagefolder
         Page.Active = true
         Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -138,7 +142,7 @@ function Library:CreateWindow(hubname)
         Page.CanvasPosition = Vector2.new(0, 75)
         Page.ScrollBarThickness = 5
         
-        TabButton.Name = "TabButton"
+        TabButton.Name = name
         TabButton.Parent = SideBar
         TabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         TabButton.BackgroundTransparency = 1.000
