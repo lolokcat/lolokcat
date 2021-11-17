@@ -337,7 +337,7 @@ function Library:CreateWindow(hubname)
 			Option.TextColor3 = Color3.fromRGB(255, 255, 255)
 			Option.TextSize = 19.000
 			Option.TextWrapped = true
-			Option.TextTransparency = 1
+			Option.TextTransparency = 0
 			
 			Option.MouseButton1Click:Connect(function()
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
