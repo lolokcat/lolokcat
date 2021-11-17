@@ -362,7 +362,78 @@ function Library:CreateWindow(hubname)
 				Dropped = true
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
-				Tween(arrow_drop_down, TweenInfo.new(0, 3), {Rotation = -90})
+				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = 90})
+			end
+		end)
+	 end
+	 
+	 function ElementHandler:Toggle(name, state, callback)
+	 	local name = name or "Dropdown"
+		local callback = callback or function() end
+		local state = state or false
+		local Toggle = Instance.new("ImageButton")
+		local Label = Instance.new("TextLabel")
+		local check_box = Instance.new("ImageButton")
+		local crop_din = Instance.new("ImageButton")
+		
+		Toggle.Name = "Toggle"
+		Toggle.Parent = game.StarterGui.KeySystem.Main.pagefolder.Page
+		Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Toggle.BackgroundTransparency = 1.000
+		Toggle.Position = UDim2.new(0.139802635, 0, 0.166844919, 0)
+		Toggle.Size = UDim2.new(0, 385, 0, 40)
+		Toggle.Image = "rbxassetid://2790382281"
+		Toggle.ImageColor3 = Color3.fromRGB(35, 35, 35)
+		Toggle.ScaleType = Enum.ScaleType.Slice
+		Toggle.SliceCenter = Rect.new(4, 4, 252, 252)
+
+		Label.Name = "Label"
+		Label.Parent = Toggle
+		Label.AnchorPoint = Vector2.new(0.5, 0.5)
+		Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Label.BackgroundTransparency = 1.000
+		Label.BorderSizePixel = 0
+		Label.Position = UDim2.new(0.5, 0, 0.5, 0)
+		Label.Size = UDim2.new(1, -5, 1, -5)
+		Label.Font = Enum.Font.GothamSemibold
+		Label.Text = "Button"
+		Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Label.TextSize = 14.000
+
+		check_box.Name = "check_box"
+		check_box.Parent = Toggle
+		check_box.BackgroundTransparency = 1.000
+		check_box.LayoutOrder = 4
+		check_box.Position = UDim2.new(0.906493485, 0, 0.174999997, 0)
+		check_box.Size = UDim2.new(0, 25, 0, 25)
+		check_box.ZIndex = 2
+		check_box.Image = "rbxassetid://3926311105"
+		check_box.ImageRectOffset = Vector2.new(4, 836)
+		check_box.ImageRectSize = Vector2.new(48, 48)
+		check_box.ImageTransparency = 1.000
+
+		crop_din.Name = "crop_din"
+		crop_din.Parent = Toggle
+		crop_din.BackgroundTransparency = 1.000
+		crop_din.LayoutOrder = 7
+		crop_din.Position = UDim2.new(0.906493545, 0, 0.174999997, 0)
+		crop_din.Size = UDim2.new(0, 25, 0, 25)
+		crop_din.ZIndex = 2
+		crop_din.Image = "rbxassetid://3926305904"
+		crop_din.ImageRectOffset = Vector2.new(724, 724)
+		crop_din.ImageRectSize = Vector2.new(36, 36)
+		
+		local Dropped = false
+		
+		Toggle.MouseButton1Click:Connect(function()
+			if Dropped == true then
+				Dropped = false
+				Tween(check_box, TweenInfo.new(0.3), {ImageTransparency = 1})
+				callback(false)
+			elseif Dropped == false then
+				Dropped = true
+				Tween(check_box, TweenInfo.new(0.3), {ImageTransparency = 0})
+				callback(true)
 			end
 		end)
 	 end
