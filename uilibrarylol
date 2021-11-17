@@ -1,0 +1,175 @@
+local Library = {}
+
+function Library.CreateWindow(hubname)
+      local KeySystem = Instance.new("ScreenGui")
+      local Main = Instance.new("Frame")
+      local MainCorner2 = Instance.new("UICorner")
+      local Extention2 = Instance.new("Frame")
+      local MainFrame = Instance.new("Frame")
+      local MainCorner = Instance.new("UICorner")
+      local Extention = Instance.new("Frame")
+      local Title = Instance.new("TextLabel")
+      local home = Instance.new("ImageButton")
+      local menu = Instance.new("ImageButton")
+      local SideBar = Instance.new("Frame")
+      local SideCorner = Instance.new("UICorner")
+      local List = Instance.new("UIListLayout")
+      local Padding = Instance.new("UIPadding")
+
+      --Properties:
+
+      KeySystem.Name = "KeySystem"
+      KeySystem.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+      KeySystem.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+      Main.Name = "Main"
+      Main.Parent = KeySystem
+      Main.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+      Main.Position = UDim2.new(0.0189662725, 0, 0.478074878, 0)
+      Main.Size = UDim2.new(0, 556, 0, 39)
+
+      MainCorner2.Name = "MainCorner2"
+      MainCorner2.Parent = Main
+
+      Extention2.Name = "Extention2"
+      Extention2.Parent = Main
+      Extention2.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+      Extention2.BorderSizePixel = 0
+      Extention2.Position = UDim2.new(0, 0, 0.794871807, 0)
+      Extention2.Size = UDim2.new(0, 556, 0, 83)
+
+      MainFrame.Name = "MainFrame"
+      MainFrame.Parent = Main
+      MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+      MainFrame.BorderSizePixel = 0
+      MainFrame.Position = UDim2.new(0, 0, 1.02564108, 0)
+      MainFrame.Size = UDim2.new(0, 556, 0, 416)
+
+      MainCorner.Name = "MainCorner"
+      MainCorner.Parent = MainFrame
+
+      Extention.Name = "Extention"
+      Extention.Parent = Main
+      Extention.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+      Extention.BorderSizePixel = 0
+      Extention.Position = UDim2.new(0, 0, 1.02564108, 0)
+      Extention.Size = UDim2.new(0, 556, 0, 8)
+
+      Title.Name = "Title"
+      Title.Parent = Main
+      Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+      Title.BackgroundTransparency = 1.000
+      Title.BorderSizePixel = 0
+      Title.Position = UDim2.new(0.0833169967, 0, 0.051282052, 0)
+      Title.Size = UDim2.new(0, 473, 0, 38)
+      Title.ZIndex = 3
+      Title.Font = Enum.Font.Gotham
+      Title.Text = hubname
+      Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+      Title.TextSize = 17.000
+      Title.TextXAlignment = Enum.TextXAlignment.Left
+
+      home.Name = "home"
+      home.Parent = Main
+      home.BackgroundTransparency = 1.000
+      home.Position = UDim2.new(0.0215827338, 0, 0.205128208, 0)
+      home.Size = UDim2.new(0, 25, 0, 25)
+      home.ZIndex = 2
+      home.Image = "rbxassetid://3926305904"
+      home.ImageRectOffset = Vector2.new(964, 204)
+      home.ImageRectSize = Vector2.new(36, 36)
+
+      menu.Name = "menu"
+      menu.Parent = Main
+      menu.BackgroundTransparency = 1.000
+      menu.Position = UDim2.new(0.935678363, 0, 0.204579711, 0)
+      menu.Size = UDim2.new(0, 25, 0, 25)
+      menu.ZIndex = 2
+      menu.Image = "rbxassetid://3926305904"
+      menu.ImageRectOffset = Vector2.new(604, 684)
+      menu.ImageRectSize = Vector2.new(36, 36)
+
+      SideBar.Name = "SideBar"
+      SideBar.Parent = Main
+      SideBar.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+      SideBar.Position = UDim2.new(0, 0, 1, 0)
+      SideBar.Size = UDim2.new(0, 149, 0, 417)
+
+      SideCorner.Name = "SideCorner"
+      SideCorner.Parent = SideBar
+
+      List.Name = "List"
+      List.Parent = SideBar
+      List.HorizontalAlignment = Enum.HorizontalAlignment.Center
+      List.SortOrder = Enum.SortOrder.LayoutOrder
+      List.Padding = UDim.new(0, 2)
+
+      Padding.Name = "Padding"
+      Padding.Parent = SideBar
+      
+      Extention3.Name = "Extention3"
+      Extention3.Parent = Main
+      Extention3.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+      Extention3.BorderSizePixel = 0
+      Extention3.Position = UDim2.new(0.255395681, 0, 1, 0)
+      Extention3.Size = UDim2.new(0, 7, 0, 417)
+
+      Extention4.Name = "Extention4"
+      Extention4.Parent = Main
+      Extention4.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+      Extention4.BorderSizePixel = 0
+      Extention4.Position = UDim2.new(0, 0, 1, 0)
+      Extention4.Size = UDim2.new(0, 7, 0, 9)
+      
+      pagefolder.Name = "pagefolder"
+      pagefolder.Parent = KeySystem
+      
+      local TabHandler = {}
+      
+      function TabHandler:Tab(name)
+        Page.Name = "Page"
+        Page.Parent = pagefolder
+        Page.Active = true
+        Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Page.BackgroundTransparency = 1.000
+        Page.BorderSizePixel = 0
+        Page.Position = UDim2.new(0.128043875, 0, 0.521925151, 0)
+        Page.Size = UDim2.new(0, 406, 0, 415)
+        Page.CanvasPosition = Vector2.new(0, 75)
+        Page.ScrollBarThickness = 5
+        
+        TabButton.Name = "TabButton"
+        TabButton.Parent = SideBar
+        TabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TabButton.BackgroundTransparency = 1.000
+        TabButton.Size = UDim2.new(0, 131, 0, 40)
+        TabButton.Image = "rbxassetid://2790382281"
+        TabButton.ImageColor3 = Color3.fromRGB(35, 35, 35)
+        TabButton.ScaleType = Enum.ScaleType.Slice
+        TabButton.SliceCenter = Rect.new(4, 4, 252, 252)
+
+        Label.Name = "Label"
+        Label.Parent = TabButton
+        Label.AnchorPoint = Vector2.new(0.5, 0.5)
+        Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Label.BackgroundTransparency = 1.000
+        Label.BorderSizePixel = 0
+        Label.Position = UDim2.new(0.5, 0, 0.5, 0)
+        Label.Size = UDim2.new(1, -5, 1, -5)
+        Label.Font = Enum.Font.GothamSemibold
+        Label.Text = "Button"
+        Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Label.TextSize = 14.000
+        
+        TabButton.MouseButton1Click:Connect(function()
+        for i,v in next, pagefolder:GetChildren() do
+                v.Visible = false
+            end 
+            Page.Visible = true
+        end)
+        
+        local ElementsHandler = {}
+        
+     end
+end
+        
