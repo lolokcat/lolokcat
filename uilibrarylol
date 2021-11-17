@@ -131,7 +131,7 @@ function Library:CreateWindow(hubname)
         local TabButton = Instance.new("ImageButton")
         local Label = Instance.new("TextLabel")
 
-        Page.Name = "Page"
+        Page.Name = name
         Page.Parent = pagefolder
         Page.Active = true
         Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
