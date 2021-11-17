@@ -326,7 +326,7 @@ function Library:CreateWindow(hubname)
 		
 		for i,v in pairs(options) do 
 			local Option = Instance.new("TextButton")
-			Option.Name = "Option"
+			Option.Name = v
 			Option.Parent = OptionContainer
 			Option.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Option.BackgroundTransparency = 1.000
