@@ -227,6 +227,7 @@ function Library:CreateWindow(hubname)
                   callback()
             end)
          end
+         return ElementHandler
      end
      return TabHandler
 end
