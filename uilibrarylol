@@ -250,6 +250,123 @@ function Library:CreateWindow(hubname)
 		            callback(TextBox.Text)
                end)
           end
+	  
+	  function ElementHandler:DropDown(name, options, callback)
+	  	local options = options or {}
+		local name = name or "Dropdown"
+		local callback = callback or function() end
+		
+		local DropDown = Instance.new("ImageButton")
+		local Label = Instance.new("TextLabel")
+		local arrow_drop_down = Instance.new("ImageButton")
+		local UICorner = Instance.new("UICorner")
+		local Frame = Instance.new("Frame")
+		local OptionContainer = Instance.new("ScrollingFrame")
+		local UIListLayout = Instance.new("UIListLayout")
+
+		DropDown.Name = "DropDown"
+		DropDown.Parent = Page
+		DropDown.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		DropDown.BackgroundTransparency = 1.000
+		DropDown.Position = UDim2.new(0.115131572, 0, 0.126203209, 0)
+		DropDown.Size = UDim2.new(0, 385, 0, 40)
+		DropDown.Image = "rbxassetid://2790382281"
+		DropDown.ImageColor3 = Color3.fromRGB(35, 35, 35)
+		DropDown.ScaleType = Enum.ScaleType.Slice
+		DropDown.SliceCenter = Rect.new(4, 4, 252, 252)
+
+		Label.Name = "Label"
+		Label.Parent = DropDown
+		Label.AnchorPoint = Vector2.new(0.5, 0.5)
+		Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Label.BackgroundTransparency = 1.000
+		Label.BorderSizePixel = 0
+		Label.Position = UDim2.new(0.5, 0, 0.5, 0)
+		Label.Size = UDim2.new(1, -5, 1, -5)
+		Label.Font = Enum.Font.GothamSemibold
+		Label.Text = "Button"
+		Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Label.TextSize = 14.000
+
+		arrow_drop_down.Name = "arrow_drop_down"
+		arrow_drop_down.Parent = DropDown
+		arrow_drop_down.BackgroundTransparency = 1.000
+		arrow_drop_down.Position = UDim2.new(0.903896153, 0, 0.075000003, 0)
+		arrow_drop_down.Size = UDim2.new(0, 34, 0, 34)
+		arrow_drop_down.ZIndex = 2
+		arrow_drop_down.Image = "rbxassetid://3926307971"
+		arrow_drop_down.ImageRectOffset = Vector2.new(324, 524)
+		arrow_drop_down.ImageRectSize = Vector2.new(36, 36)
+
+		UICorner.CornerRadius = UDim.new(0, 3)
+		UICorner.Parent = DropDown
+
+		Frame.Parent = DropDown
+		Frame.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+		Frame.BorderColor3 = Color3.fromRGB(34, 34, 34)
+		Frame.Position = UDim2.new(0.00129870127, 0, 0.800000012, 0)
+		Frame.Size = UDim2.new(0, 383, 0, 0)
+
+		OptionContainer.Name = "OptionContainer"
+		OptionContainer.Parent = Frame
+		OptionContainer.Active = true
+		OptionContainer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		OptionContainer.BackgroundTransparency = 1.000
+		OptionContainer.BorderSizePixel = 0
+		OptionContainer.Size = UDim2.new(0, 384, 0, 0)
+		OptionContainer.CanvasPosition = Vector2.new(0, 150)
+		OptionContainer.ScrollBarThickness = 5
+		OptionContainer.AutomaticCanvasSize = Enum.AutomaticSize.Y
+
+		UIListLayout.Parent = OptionContainer
+		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+		
+		for i,v in pairs(options) do 
+			local Option = Instance.new("TextButton")
+			Option.Name = "Option"
+			Option.Parent = OptionContainer
+			Option.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Option.BackgroundTransparency = 1.000
+			Option.Size = UDim2.new(0, 363, 0, 50)
+			Option.AutoButtonColor = false
+			Option.Font = Enum.Font.GothamSemibold
+			Option.Text = v
+			Option.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Option.TextSize = 19.000
+			Option.TextWrapped = true
+			Option.TextTransparency = 1
+		end
+		
+		local function Tween(asset, info, thing)
+			game:GetService("TweenService"):Create(asset, info, thing):Play()
+		end
+		
+		local Dropped = false
+		
+		DropDown.MouseButton1Down:Connect(function()
+			if Dropped == true then
+				Dropped = false
+				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
+				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
+				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = 90})
+				wait(0.3)
+				for i,v in pairs(OptionContainer:GetChildren()) do 
+					Tween(v, TweenInfo.new(0.3), {TextTransparency = 0})
+				end
+			elseif Dropped == false then
+				Dropped = true
+				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
+				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
+				Tween(arrow_drop_down, TweenInfo.new(0, 3), {Rotation = -90})
+				wait(0.3)
+				for i,v in pairs(OptionContainer:GetChildren()) do 
+					Tween(v, TweenInfo.new(0.3), {TextTransparency = 1})
+				end
+			end
+		end)
+	 end
+		
          return ElementHandler
      end
      return TabHandler
