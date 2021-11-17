@@ -15,6 +15,9 @@ function Library:CreateWindow(hubname)
       local SideCorner = Instance.new("UICorner")
       local List = Instance.new("UIListLayout")
       local Padding = Instance.new("UIPadding")
+      local pagefolder = Instance.new("Folder")
+      local Extention3 = Instance.new("Frame")
+      local Extention4 = Instance.new("Frame")
 
       --Properties:
 
@@ -131,7 +134,7 @@ function Library:CreateWindow(hubname)
         local TabButton = Instance.new("ImageButton")
         local Label = Instance.new("TextLabel")
             
-        Page.Name = name
+        Page.Name = "Page"
         Page.Parent = pagefolder
         Page.Active = true
         Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
