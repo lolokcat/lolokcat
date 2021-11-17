@@ -255,6 +255,7 @@ function Library:CreateWindow(hubname)
 	  	local options = options or {}
 		local name = name or "Dropdown"
 		local callback = callback or function() end
+		local Dropped = false
 		
 		local DropDown = Instance.new("ImageButton")
 		local Label = Instance.new("TextLabel")
@@ -337,15 +338,24 @@ function Library:CreateWindow(hubname)
 			Option.TextSize = 19.000
 			Option.TextWrapped = true
 			Option.TextTransparency = 1
+			
+			Option.MouseButton1Click:Connect(function()
+				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
+				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
+				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = 90})
+				wait(0.3)
+				for i,v in pairs(OptionContainer:GetChildren()) do 
+					Tween(v, TweenInfo.new(0.3), {TextTransparency = 0})
+				end
+				callback(v)
+			end)
 		end
 		
 		local function Tween(asset, info, thing)
 			game:GetService("TweenService"):Create(asset, info, thing):Play()
 		end
 		
-		local Dropped = false
-		
-		DropDown.MouseButton1Down:Connect(function()
+		DropDown.MouseButton1Click:Connect(function()
 			if Dropped == true then
 				Dropped = false
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
