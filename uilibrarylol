@@ -146,8 +146,6 @@ function Library:CreateWindow(hubname)
         
         
         local UIPadding = Instance.new("UIPadding")
-        local Button = Instance.new("ImageButton")
-        local Label = Instance.new("TextLabel")
         local UIListLayout = Instance.new("UIListLayout")
 
 
@@ -199,6 +197,9 @@ function Library:CreateWindow(hubname)
         function ElementHandler:Button(name, callback)
             local name = name or "TextButton"
             local callback = callback or function() end
+            
+            local Button = Instance.new("ImageButton")
+            local Label = Instance.new("TextLabel")
             
             Button.Name = "Button"
             Button.Parent = Page
