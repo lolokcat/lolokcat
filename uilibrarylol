@@ -369,7 +369,7 @@ function Library:CreateWindow(hubname)
 				Dropped = true
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
-				Tween(arrow_drop_down, TweenInfo.new(0, 3), {Rotation = 45})
+				Tween(arrow_drop_down, TweenInfo.new(0, 3), {Rotation = arrow_drop_down.Rotation + 90})
 				wait(0.3)
 				for i,v in pairs(OptionContainer:GetChildren()) do 
 					Tween(v, TweenInfo.new(0.3), {TextTransparency = 1})
