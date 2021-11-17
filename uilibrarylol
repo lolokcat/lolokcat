@@ -144,10 +144,8 @@ function Library:CreateWindow(hubname)
         Page.Size = UDim2.new(0, 406, 0, 415)
         Page.ScrollBarThickness = 5
         
-        
         local UIPadding = Instance.new("UIPadding")
         local UIListLayout = Instance.new("UIListLayout")
-
 
         UIPadding.Parent = Page
         UIPadding.PaddingBottom = UDim.new(0, 5)
@@ -192,7 +190,7 @@ function Library:CreateWindow(hubname)
         Page.Visible = true
         end)   
         
-                local ElementHandler = {}
+        local ElementHandler = {}
         
         function ElementHandler:Button(name, callback)
             local name = name or "TextButton"
