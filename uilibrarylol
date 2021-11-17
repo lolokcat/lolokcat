@@ -434,11 +434,11 @@ function Library:CreateWindow(hubname)
 			if Dropped == true then
 				Dropped = false
 				Tween(check_box, TweenInfo.new(0.3), {ImageTransparency = 1})
-				callback(false)
+				callback(Dropped)
 			elseif Dropped == false then
 				Dropped = true
 				Tween(check_box, TweenInfo.new(0.3), {ImageTransparency = 0})
-				callback(true)
+				callback(Dropped)
 			end
 		end)
 	 end
