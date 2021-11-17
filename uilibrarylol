@@ -423,6 +423,11 @@ function Library:CreateWindow(hubname)
 		crop_din.ImageRectOffset = Vector2.new(724, 724)
 		crop_din.ImageRectSize = Vector2.new(36, 36)
 		
+				
+		local function Tween(asset, info, thing)
+			game:GetService("TweenService"):Create(asset, info, thing):Play()
+		end
+		
 		local Dropped = false
 		
 		Toggle.MouseButton1Click:Connect(function()
