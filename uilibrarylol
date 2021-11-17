@@ -166,10 +166,8 @@ function Library:CreateWindow(hubname)
                 v.Visible = false
             end 
             Page.Visible = true
-        end)
-        
-        local ElementsHandler = {}
-        
+        end)   
      end
+     return TabHandler
 end
-        
+return Library 
