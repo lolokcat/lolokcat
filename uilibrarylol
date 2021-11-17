@@ -141,7 +141,7 @@ function Library:CreateWindow(hubname)
         Page.BackgroundTransparency = 1.000
         Page.BorderSizePixel = 0
         Page.Position = UDim2.new(0.128043875, 0, 0.521925151, 0)
-        Page.Size = UDim2.new(0, 406, 0, 415)
+        Page.Size = UDim2.new(0, 390, 0, 415)
         Page.CanvasPosition = Vector2.new(0, 75)
         Page.ScrollBarThickness = 5
         
