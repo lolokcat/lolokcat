@@ -149,11 +149,11 @@ function Library:CreateWindow(hubname)
         local UIListLayout = Instance.new("UIListLayout")
 
 
-        UIPadding.Parent = game.StarterGui.KeySystem.Main.pagefolder.Page
+        UIPadding.Parent = Page
         UIPadding.PaddingBottom = UDim.new(0, 5)
         UIPadding.PaddingTop = UDim.new(0, 5)
 
-        UIListLayout.Parent = game.StarterGui.KeySystem.Main.pagefolder.Page
+        UIListLayout.Parent = Page
         UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
         UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
         
