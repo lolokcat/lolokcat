@@ -285,7 +285,7 @@ function Library:CreateWindow(hubname)
 		Label.Position = UDim2.new(0.5, 0, 0.5, 0)
 		Label.Size = UDim2.new(1, -5, 1, -5)
 		Label.Font = Enum.Font.GothamSemibold
-		Label.Text = "Button"
+		Label.Text = name
 		Label.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Label.TextSize = 14.000
 
@@ -344,8 +344,8 @@ function Library:CreateWindow(hubname)
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
 				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = 90})
 				wait(0.3)
-				for i,v in pairs(OptionContainer:GetChildren()) do 
-					Tween(v, TweenInfo.new(0.3), {TextTransparency = 0})
+				for i,j in pairs(OptionContainer:GetChildren()) do 
+					Tween(j, TweenInfo.new(0.3), {TextTransparency = 0})
 				end
 				callback(v)
 			end)
@@ -369,7 +369,7 @@ function Library:CreateWindow(hubname)
 				Dropped = true
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 299)})
-				Tween(arrow_drop_down, TweenInfo.new(0, 3), {Rotation = arrow_drop_down.Rotation + -90})
+				Tween(arrow_drop_down, TweenInfo.new(0, 3), {Rotation = -90})
 				wait(0.3)
 				for i,v in pairs(OptionContainer:GetChildren()) do 
 					Tween(v, TweenInfo.new(0.3), {TextTransparency = 1})
