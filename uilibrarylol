@@ -348,7 +348,7 @@ function Library:CreateWindow(hubname)
 				Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
 				Tween(arrow_drop_down, TweenInfo.new(0.3), {Rotation = -90})
 				callback(v)
-				Label.Text = Label.Text.." - "..v
+				Label.Text = name.." - "..v
 			end)
 		end
 		
