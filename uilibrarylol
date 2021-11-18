@@ -276,7 +276,7 @@ function Library:CreateWindow(hubname)
 		DropDown.ImageColor3 = Color3.fromRGB(35, 35, 35)
 		DropDown.ScaleType = Enum.ScaleType.Slice
 		DropDown.SliceCenter = Rect.new(4, 4, 252, 252)
-    DropDown.ZIndex = 10
+    		DropDown.ZIndex = 10
 
 		Label.Name = "Label"
 		Label.Parent = DropDown
@@ -290,7 +290,7 @@ function Library:CreateWindow(hubname)
 		Label.Text = name
 		Label.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Label.TextSize = 14.000
-    Label.ZIndex = 10
+    		Label.ZIndex = 10
 
 		arrow_drop_down.Name = "arrow_drop_down"
 		arrow_drop_down.Parent = DropDown
@@ -302,7 +302,7 @@ function Library:CreateWindow(hubname)
 		arrow_drop_down.Image = "rbxassetid://3926307971"
 		arrow_drop_down.ImageRectOffset = Vector2.new(324, 524)
 		arrow_drop_down.ImageRectSize = Vector2.new(36, 36)
-    arrow_drop_down.ZIndex = 11
+    		arrow_drop_down.ZIndex = 11
 
 		UICorner.CornerRadius = UDim.new(0, 3)
 		UICorner.Parent = DropDown
@@ -312,7 +312,7 @@ function Library:CreateWindow(hubname)
 		Frame.BorderColor3 = Color3.fromRGB(34, 34, 34)
 		Frame.Position = UDim2.new(0.00129870127, 0, 0.800000012, 0)
 		Frame.Size = UDim2.new(0, 383, 0, 0)
-    Frame.ZIndex = 10
+    		Frame.ZIndex = 10
 
 		OptionContainer.Name = "OptionContainer"
 		OptionContainer.Parent = Frame
@@ -324,7 +324,7 @@ function Library:CreateWindow(hubname)
 		OptionContainer.CanvasPosition = Vector2.new(0, 150)
 		OptionContainer.ScrollBarThickness = 5
 		OptionContainer.AutomaticCanvasSize = Enum.AutomaticSize.Y
-    OptionContainer.ZIndex = 10
+    		OptionContainer.ZIndex = 10
 
 		UIListLayout.Parent = OptionContainer
 		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -348,7 +348,7 @@ function Library:CreateWindow(hubname)
 			Option.TextSize = 19.000
 			Option.TextWrapped = true
 			Option.TextTransparency = 0
-      Option.ZIndex = 10
+      			Option.ZIndex = 10
 			
 			Option.MouseButton1Click:Connect(function()
 				Tween(OptionContainer, TweenInfo.new(0.3), {Size = UDim2.new(0, 384, 0, 0)})
