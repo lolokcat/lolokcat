@@ -30,6 +30,7 @@ function Library:CreateWindow(hubname)
       Main.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
       Main.Position = UDim2.new(0.0189662725, 0, 0.478074878, 0)
       Main.Size = UDim2.new(0, 556, 0, 39)
+      Main.Draggable = true
 
       MainCorner2.Name = "MainCorner2"
       MainCorner2.Parent = Main
