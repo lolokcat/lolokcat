@@ -4,6 +4,14 @@ local Main = Ui:CreateWindow("'Mogus HUb")
 
 local Tab1 = Main:Tab("Main")
 
+Tab1:Button("TestingButton", function()
+    print("Clicked!")
+end)
+
+Tab1:TextBox("TestingTextBox", function(t)
+    print(t)
+end)
+
 Tab1:Toggle("TestingToggle", false, function(state)
     print(state)
 end)
