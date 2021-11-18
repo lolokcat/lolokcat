@@ -1,1 +1,13 @@
-local Ui = loadstring(game:HttpGet(('https://raw.githubusercontent.com/'),true))()
+local Ui = loadstring(game:HttpGet(('https://raw.githubusercontent.com/lolokcat/lolokcat/main/uilibrarylol'),true))()
+
+local Main = Ui:CreateWindow("'Mogus HUb")
+
+local Tab1 = Main:Tab("Main")
+
+Tab1:Toggle("TestingToggle", false, function(state)
+    print(state)
+end)
+
+Tab1:DropDown("TestingDropDown", {"Testing", "Testing2", "Testing3", "Testing4", "Testing5", "Testing6", "Testing7", "Testing8", "Testing9", "Testing10"}, function(j)
+    print(j)
+end)
