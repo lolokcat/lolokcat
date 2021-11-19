@@ -1,9 +1,42 @@
 local Library = {}
 
-function Drag(frame)
- 	local UserInputService = game:GetService("UserInputService")
+function Library:CreateWindow(hubname)
+      local KeySystem = Instance.new("ScreenGui")
+      local Main = Instance.new("Frame")
+      local MainCorner2 = Instance.new("UICorner")
+      local Extention2 = Instance.new("Frame")
+      local MainFrame = Instance.new("Frame")
+      local MainCorner = Instance.new("UICorner")
+      local Extention = Instance.new("Frame")
+      local Title = Instance.new("TextLabel")
+      local home = Instance.new("ImageButton")
+      local menu = Instance.new("ImageButton")
+      local SideBar = Instance.new("Frame")
+      local SideCorner = Instance.new("UICorner")
+      local List = Instance.new("UIListLayout")
+      local Padding = Instance.new("UIPadding")
+      local pagefolder = Instance.new("Folder")
+      local Extention3 = Instance.new("Frame")
+      local Extention4 = Instance.new("Frame")
 
-        local gui = frame
+      --Properties:
+
+      KeySystem.Name = "KeySystem"
+      KeySystem.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+      KeySystem.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+      
+      pagefolder.Name = "pagefolder"
+      pagefolder.Parent = Main
+
+      Main.Name = "Main"
+      Main.Parent = KeySystem
+      Main.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+      Main.Position = UDim2.new(0.0189662725, 0, 0.478074878, 0)
+      Main.Size = UDim2.new(0, 556, 0, 39)
+      
+        local UserInputService = game:GetService("UserInputService")
+
+        local gui = main
 
         local dragging
         local dragInput
@@ -12,6 +45,9 @@ function Drag(frame)
 
         local function update(input)
         	local delta = input.Position - dragStart
+		for i,v in pairs(KeySystem.pageFolder:GetChildren()) do
+			v.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
         	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
         end
 
@@ -40,40 +76,6 @@ function Drag(frame)
         		update(input)
         	end
         end)
-end)
-
-function Library:CreateWindow(hubname)
-      local KeySystem = Instance.new("ScreenGui")
-      local Main = Instance.new("Frame")
-      local MainCorner2 = Instance.new("UICorner")
-      local Extention2 = Instance.new("Frame")
-      local MainFrame = Instance.new("Frame")
-      local MainCorner = Instance.new("UICorner")
-      local Extention = Instance.new("Frame")
-      local Title = Instance.new("TextLabel")
-      local home = Instance.new("ImageButton")
-      local menu = Instance.new("ImageButton")
-      local SideBar = Instance.new("Frame")
-      local SideCorner = Instance.new("UICorner")
-      local List = Instance.new("UIListLayout")
-      local Padding = Instance.new("UIPadding")
-      local pagefolder = Instance.new("Folder")
-      local Extention3 = Instance.new("Frame")
-      local Extention4 = Instance.new("Frame")
-
-      --Properties:
-
-      KeySystem.Name = "KeySystem"
-      KeySystem.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-      KeySystem.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-      Main.Name = "Main"
-      Main.Parent = KeySystem
-      Main.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
-      Main.Position = UDim2.new(0.0189662725, 0, 0.478074878, 0)
-      Main.Size = UDim2.new(0, 556, 0, 39)
-      
-      drag(Main)
 
       MainCorner2.Name = "MainCorner2"
       MainCorner2.Parent = Main
@@ -168,9 +170,6 @@ function Library:CreateWindow(hubname)
       Extention4.Position = UDim2.new(0, 0, 1, 0)
       Extention4.Size = UDim2.new(0, 7, 0, 9)
       
-      pagefolder.Name = "pagefolder"
-      pagefolder.Parent = Main
-      
       local TabHandler = {}
       
       function TabHandler:Tab(name)
@@ -187,8 +186,6 @@ function Library:CreateWindow(hubname)
         Page.Position = UDim2.new(0.268331647, 0, 1.06038666, 0)
         Page.Size = UDim2.new(0, 406, 0, 415)
         Page.ScrollBarThickness = 5
-	
-	drag(Page)
         
         local UIPadding = Instance.new("UIPadding")
         local UIListLayout = Instance.new("UIListLayout")
