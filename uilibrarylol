@@ -187,6 +187,8 @@ function Library:CreateWindow(hubname)
         Page.Position = UDim2.new(0.268331647, 0, 1.06038666, 0)
         Page.Size = UDim2.new(0, 406, 0, 415)
         Page.ScrollBarThickness = 5
+	
+	drag(Page)
         
         local UIPadding = Instance.new("UIPadding")
         local UIListLayout = Instance.new("UIListLayout")
